@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta name="application-name" content="LocationAR Zappar Demo Application">
+  <meta name="robots" content="noindex">
+  <meta name="robots" content="nosnippet">
+  <meta name="robots" content="nofollow">
+  <meta name="robots" content="noarchive">
+  <meta name="googlebot" content="noindex">
+  <meta name="googlebot" content="nosnippet">
+  <meta name="googlebot-news" content="noindex">
+  <meta name="googlebot-news" content="nosnippet">
+  <link rel="stylesheet" type="text/css" href="https://locationar-web.herokuapp.com/css/locationar-zappar.css">
+  <title>LocationAR Zappar Demo Application</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://libs.zappar.com/zappar-aframe/0.3.29/zappar-aframe.js"></script>
+  <script src="https://libs.zappar.com/zappar-snapshot/1.0.1/zappar-snapshot.min.js"></script>
+  <script>const GTAG_ID = '';</script>
+  <script src="https://locationar-web.herokuapp.com/js/locationar-common.js"></script>
+  <script src="https://locationar-web.herokuapp.com/js/locationar-view-helper.js"></script>
+  <script src="https://locationar-web.herokuapp.com/js/locationar-service.js"></script>
+  <script src="https://locationar-web.herokuapp.com/js/locationar-zappar.js"></script>
+  <script src="js/zappar-demo.js"></script>
+</head>
+<body>
+  <div id="ng-access" style="display:none">
+    アクセスできない状態です。
+  </div>
+  <div id="ng-public" style="display:none">
+    公開できない状態です。
+  </div>
+  <div id="not-access" style="display:none">
+	  現地にてご体験ください。
+  </div>
+  <div id="ar-view" style="display:none">
+    <a-scene device-orientation-permission-ui="false">
+      <a-entity zappar-permissions-ui id="permissions">
+          <a-entity text="value: Please reload the page, accepting the camera permissions." position="0 0 -2"></a-entity>
+      </a-entity>
+      <a-camera zappar-camera cursor="rayOrigin: mouse; fuse: false;" raycaster="objects: .collidable"></a-camera>
+      <a-entity id="zappar-marker" zappar-image="target: locationar.zpt">
+          <a-entity id="model" scale="10 10 10" gltf-model="url(Broken_Steampunk_Clock.glb)" animation-mixer></a-entity>
+      </a-entity>
+    </a-scene>
+    <div class="locationar-zappar-btn-wrapper">
+      <a href="#" id="locationar-zappar-snapshot" class="locationar-zappar-btn-real-dent">
+        <i class="locationar-zappar-camera"></i>
+      </a>
+    </div>
+    <div id="preview" class="locationar-zappar-preview-message">プレビューモード</div>
+  </div>
+</body>
+</html>
