@@ -8,6 +8,7 @@ function onLoadFunction()
 
 function initLocationARZappar()
 {
+    LocationARZappar.init();
     const zapparMarker = document.getElementById("zappar-marker");
     const model = document.getElementById("model");
     model.setAttribute("visible", false);
